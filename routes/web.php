@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\todo\CreateTodoController;
+use App\Http\Controllers\todo\SearchTodoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,3 +15,5 @@ Route::get('/todo/create', function () {
 });
 
 Route::post('/todo/store', [CreateTodoController::class, 'handle']);
+
+Route::get('/todos', [SearchTodoController::class, 'index']);

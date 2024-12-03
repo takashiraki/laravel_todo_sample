@@ -23,15 +23,17 @@
             </form>
         </div>
         <div class="mt-4">
-            <ul>
-                <li>
-                    <form method="post" action="#">
-                        <input type="hidden" value="hogehoge">
-                        title
-                        <button type="submit"
-                            class="ml-4 rounded-md border-2 border-solid border-slate-500 px-4">完了にする</button>
-                    </form>
-                </li>
+            <ul class="grid gap-y-4">
+                @foreach ($todos as $value)
+                    <li class="flex w-1/3 justify-between">
+                        <p>{{ $value->todo_title }}</p>
+                        <form method="post" action="#">
+                            <input type="hidden" value="{{ $value->todo_id }}">
+                            <button type="submit"
+                                class="ml-4 rounded-md border-2 border-solid border-slate-500 px-4">完了にする</button>
+                        </form>
+                    </li>
+                @endforeach
 
             </ul>
         </div>
