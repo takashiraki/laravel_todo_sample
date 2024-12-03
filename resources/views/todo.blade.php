@@ -13,8 +13,8 @@
     <div class="flex h-screen w-screen items-center justify-center">
         <form action="/todo/store" method="post">
             @csrf
-            <input type="text" name="title">
-            <button type="submit">登録</button>
+            <input type="text" name="title" class="rounded-md border-2 border-solid border-slate-500">
+            <button type="submit" class="ml-4 rounded-md border-2 border-solid border-slate-500 px-4">登録</button>
         </form>
     </div>
 </body>
